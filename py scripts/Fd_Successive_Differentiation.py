@@ -20,41 +20,41 @@ def successive_differentiation(mu,alpha):
 
     
     #print(len(t),len(f),len(dio),len(dfo))
-    trace1=go.Scatter(x=t,y=f,line={'color':'blue'},name="t-f")
-    trace2=go.Scatter(x=t,y=dio,line={'color':'red'},name="t-dio")
-    trace3=go.Scatter(x=t,y=dfo,line={'color':'green'},name="t-dfo")
+    # trace1=go.Scatter(x=t,y=f,line={'color':'blue'},name="t-f")
+    # trace2=go.Scatter(x=t,y=dio,line={'color':'red'},name="t-dio")
+    # trace3=go.Scatter(x=t,y=dfo,line={'color':'green'},name="t-dfo")
     
-    layout = go.Layout(
-    title=go.layout.Title(
-        text='Fractional Derivative',
-        xref='paper',
-        x=0
-    ),
-    xaxis=go.layout.XAxis(
-        title=go.layout.xaxis.Title(
-            text='t',
-            font=dict(
-                family='Courier New, monospace',
-                size=18,
-                color='#7f7f7f'
-            )
-        )
-    ),
-    yaxis=go.layout.YAxis(
-        title=go.layout.yaxis.Title(
-            text='f / dio / dfo',
-            font=dict(
-                family='Courier New, monospace',
-                size=18,
-                color='#7f7f7f'
-                )
-            )
-        )
-    )
+    # layout = go.Layout(
+    # title=go.layout.Title(
+    #     text='Fractional Derivative',
+    #     xref='paper',
+    #     x=0
+    # ),
+    # xaxis=go.layout.XAxis(
+    #     title=go.layout.xaxis.Title(
+    #         text='t',
+    #         font=dict(
+    #             family='Courier New, monospace',
+    #             size=18,
+    #             color='#7f7f7f'
+    #         )
+    #     )
+    # ),
+    # yaxis=go.layout.YAxis(
+    #     title=go.layout.yaxis.Title(
+    #         text='f / dio / dfo',
+    #         font=dict(
+    #             family='Courier New, monospace',
+    #             size=18,
+    #             color='#7f7f7f'
+    #             )
+    #         )
+    #     )
+    # )
 
-    data=[trace1,trace2,trace3]
-    fig=go.Figure(data,layout)
-    fig.to_html("sample.jpg")
+    # data=[trace1,trace2,trace3]
+    # fig=go.Figure(data,layout)
+    #fig.to_html("sample.jpg")
     #ply.plot(fig,filename="render.html")
 
     obj={
