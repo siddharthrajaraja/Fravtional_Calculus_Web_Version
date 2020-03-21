@@ -11,40 +11,9 @@ app.set('view engine','ejs');
 app.use('/assets',express.static('assets'));
 
 // Get Routes ------------------------------------->>>>  
-var  {graph_page}=require('./server/getRoutes.js')
-app.get('/read', callName); 
-
-
-
-function callName(req, res) { 
-    var trace=''
-    var spawn = require("child_process").spawn; 
-      
-    var process = spawn('python',["./py scripts/Fd_Successive_Differentiation.py"] ); 
-  
-    process.stdout.on('data', function(data) { 
-        trace+=data;
-        
-    } ).setEncoding('utf-8')
-    
-    process.stdout.on('end', function(){
-        res.render("graph.ejs",{all:trace.split("--->>>")})
-        //console.log(trace.length)
-      });
-    
-
-
-    process.stderr.on('error',(err)=>{console.log(err)})
-    process.stdin.end();
-
-} 
-  
-
-app.listen(process.env.PORT  || 3000, function() { 
-    console.log('server running on port 3000'); 
-} ) 
-
-app.get('/',(req,res)=>{
+var  {dashboard}=require('./server/getRoutes.js')
+app.get('/dashboard', dashboard); 
+app.get('/graph1',(req,res)=>{
     
     var {successive_differentiation}=require('./js scripts/Fd_Successive_differentiation')
     
@@ -55,3 +24,9 @@ app.get('/',(req,res)=>{
         })
 
 })
+
+// Post Routes ------------------------------>>>>>>>>>>>>
+
+app.listen(process.env.PORT  || 3000, function() { 
+    console.log('server running on port 3000'); 
+} ) 
