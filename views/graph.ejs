@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+</head>
+<body>
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+    
+    <%var arrx=JSON.parse(all[0])['tfx']%>
+    <%var arry =JSON.parse(all[0])['tfy']%>
+    <%var arrdioy =JSON.parse(all[0])['tdioy']%>
+    <%var arrdfoy =JSON.parse(all[0])['tdfoy']%>
+    
+    
+   
+    <%console.log(typeof(x_axis))%>
+    <script>
+        var trace1 = {
+            x: JSON.parse('<%-JSON.stringify(arrx)%>') ,
+            y: JSON.parse('<%-JSON.stringify(arry)%>'),
+            type: 'scatter',
+            mode:'line',
+            line:{color:"red"},
+            name:"t vs f"
+        };
+        
+        
+        var trace2 = {
+            x: JSON.parse('<%-JSON.stringify(arrx)%>') ,
+            y: JSON.parse('<%-JSON.stringify(arrdioy)%>'),
+            type: 'scatter',
+            mode:'line',
+            line:{color:"blue"},
+            name:"t vs dio"
+        };
+
+        
+        var trace3 = {
+            x: JSON.parse('<%-JSON.stringify(arrx)%>') ,
+            y: JSON.parse('<%-JSON.stringify(arrdfoy)%>'),
+            type: 'scatter',
+            mode:'line',
+            line:{color:"green"},
+            name:"t vs dfo"
+        };
+        var data = [trace1,trace2,trace3];
+        
+        var layout = {
+            title: 'Fractional Derivative',
+            showlegend: true,
+            xaxis:{
+                title:'t',
+                titlefont: {
+                    family: 'Arial, sans-serif',
+                    size: 20,
+                    color: 'black'
+                  }
+            },
+            yaxis:{
+                title:'f / dio / dfo',
+                titlefont: {
+                    family: 'Arial, sans-serif',
+                    size: 20,
+                    color: 'black'
+                  }
+            },
+            height:screen.height*7/8,
+            width:screen.width*7/8
+
+        };
+        
+        Plotly.newPlot('myDiv', data, layout, {scrollZoom: true,responsive:true});
+        
+
+    </script>
+
+</body>
+</html>
