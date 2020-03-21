@@ -14,17 +14,8 @@ app.use('/assets',express.static('assets'));
 var  {graph_page}=require('./server/getRoutes.js')
 app.get('/read', callName); 
 
-app.get('/graph',graph_page)
 
 
-app.put('/read',(req,res)=>{
-    console.log("i am in ")
-    
-    console.log(req.body)
-    //res.render('graph.ejs',req.body)
-    res.redirect('/graph')
-})
-  
 function callName(req, res) { 
     var trace=''
     var spawn = require("child_process").spawn; 
@@ -37,7 +28,6 @@ function callName(req, res) {
     } ).setEncoding('utf-8')
     
     process.stdout.on('end', function(){
-        console.log(trace.split("--->>>"))
         res.render("graph.ejs",{all:trace.split("--->>>")})
         //console.log(trace.length)
       });
@@ -53,3 +43,15 @@ function callName(req, res) {
 app.listen(process.env.PORT  || 3000, function() { 
     console.log('server running on port 3000'); 
 } ) 
+
+app.get('/',(req,res)=>{
+    
+    var {successive_differentiation}=require('./js scripts/Fd_Successive_differentiation')
+    
+    successive_differentiation(1.2,0.1).then((obj)=>{
+        //console.log(obj.tvfx)    
+        res.render('graph.ejs',{obj})
+            
+        })
+
+})
