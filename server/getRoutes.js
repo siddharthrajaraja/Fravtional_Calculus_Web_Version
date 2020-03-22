@@ -11,7 +11,7 @@ module.exports.dashboard=(req,res)=>{
    
    console.log(quotes.length,quotes[rn(options)])
       
-   res.render('dashboard.ejs',{quote:quotes[crn(options)]})
+   res.render('dashboard.ejs',{quote:quotes[rn(options)]})
 
 }
 
