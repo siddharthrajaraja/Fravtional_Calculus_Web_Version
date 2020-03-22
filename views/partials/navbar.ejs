@@ -4,23 +4,31 @@
       <a href="/dashboard" class="brand-logo"> <img src="/assets/logo/logo.PNG" alt="Fractional Calculus" class="responsive-img z-depth-3" style="height:40%;" > </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html" class="black-text">Register</a></li>
-        <li><a href="badges.html" class="black-text" >About Us</a></li>
+        <li ><a href="#loginBox" class="black-text modal-trigger">Login</a></li>
+        <li ><a href="#aboutUs" class="black-text">About Us</a></li>
         <li><a href="collapsible.html" class="black-text">What's New?</a></li>
       </ul>
     </div>
   </nav>
 </div>
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html" class="black-text" >Register</a></li>
-    <li><a href="badges.html" class="black-text">About Us</a></li>
+    <li><a href="#loginBox" class="black-text modal-trigger">Login</a></li>
+    <li><a href="#aboutUs" class="black-text">About Us</a></li>
     <li><a href="collapsible.html" class="black-text">What's New?</a></li>
     
   </ul>
 
+  <%-include('./login_box.ejs')%>
+  
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, {});
+    var instances = M.Sidenav.init(elems, {draggable:true});
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.scrollspy');
+    var instances = M.ScrollSpy.init(elems, {});
   });
 </script>

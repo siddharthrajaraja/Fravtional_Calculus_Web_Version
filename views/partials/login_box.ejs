@@ -1,0 +1,64 @@
+
+<!-- Modal Structure -->
+
+<div id="loginBox" class="modal modal-fixed-footer">
+    
+    <div class="modal-content">
+
+    <div id="loginContent" style="display: block;">
+        <h4 class="center-align" >Login</h4>
+        <form action="" method="POST">
+    
+            <div class="row">
+               
+                <div class="col s12 input-field">
+                    <input type="email"  name="username" id="username" class="validate"> <label for="username">Enter email-id</label>
+                </div>
+                
+                <div class="col s12 input-field">
+                    <input type="password" name="password" id="password"> <label for="password">Enter passsword</label>
+                </div>
+            </div>
+            <div class="center-align">
+                    <div class="btn z-depth-3 black" style="width: 40%;"> <i class="material-icons">send</i> </div>
+            </div>
+       </form>
+            
+     </div>
+
+     <%-include('./register.ejs')%>
+    
+    </div>
+     
+
+     <div class="modal-footer">
+        
+            <button onclick="toggleRegister()" id="gotoRegister" class="flat-btn white blue-text" style="border: none;"> Not Connected Yet? Register Here!!</button>
+            <br>
+            <button onclick="toggleBack();" id="gotoLogin" class="flat-btn white blue-text" style="border: none;visibility:hidden;"> Already Registered? Login  Here!!</button>
+
+            <br> <br>
+        
+     </div>
+
+</div>
+
+<script>
+    function toggleRegister(){
+        document.getElementById('loginContent').style.display="none";
+        document.getElementById('registerContent').style.display="block";
+        document.getElementById('gotoLogin').style.visibility="visible";
+        document.getElementById('gotoRegister').style.visibility="hidden";
+        
+        
+
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems, {});
+        instances.destroy();
+      });
+</script>

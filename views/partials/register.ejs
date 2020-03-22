@@ -1,0 +1,42 @@
+<form action="" method="POST">
+<div  id="registerContent" style="display:none;">
+            <h4 class="center-align" >Register</h4>
+            
+            <form action="" method="POST">
+    
+                <div class="row">
+                   
+                    <div class="col s12 input-field">
+                        <input type="email"  name="username" id="username" class="validate"> <label for="username">Enter email-id</label>
+                    </div>
+                    
+                    <div class="col s12 input-field">
+                        <input type="password" name="password" id="password"> <label for="password">Enter passsword</label>
+                    </div>
+
+                    <div class="col s12 input-field">
+                        <input type="password" name="password" id="password"> <label for="password">Confirm passsword</label>
+                    </div>
+
+                </div>
+
+
+
+                <div class="center-align">
+                        <div class="btn z-depth-3 black" style="width: 40%;"> <i class="material-icons">send</i> </div>
+                </div>
+           </form>
+            
+
+    </div>
+</form>
+
+<script>
+    function toggleBack(){
+        document.getElementById('loginContent').style.display="block";
+        document.getElementById('registerContent').style.display="none";
+        document.getElementById('gotoLogin').style.visibility="hidden";
+        document.getElementById('gotoRegister').style.visibility="visible";
+        
+    }
+</script>
