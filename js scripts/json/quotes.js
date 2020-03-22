@@ -1,4 +1,4 @@
-[{
+module.exports.quotes= [{
 "quoteText": "The calculus of utility aims at supplying the ordinary wants of man at the least cost of labour.",
 "quoteAuthor": "William Jevons"
 }, {
@@ -29,14 +29,8 @@
 "quoteText": "All the world's a differential equation, and the men and women are merely variables.",
 "quoteAuthor": "Ben Orlin"
 }, {
-"quoteText": “Nothing takes place in the world whose meaning is not that of some maximum or minimum.”,
-"quoteAuthor": "Leonhard Euler "
-}, {
 "quoteText": "The true logic for this world is the calculus of probabilities, which takes account of the magnitude of the probability.",
 "quoteAuthor": "James Maxwell"
-}, {
-"quoteText": “You can't teach calculus to a chimpanzee. So just share your banana.”,
-"quoteAuthor": "John Rachel"
 }, {
 "quoteText": "Calculus required continuity, and continuity was supposed to require the infinitely little; but nobody could discover what the infinitely little might be.",
 "quoteAuthor": "Bertrand Russell"
@@ -77,14 +71,8 @@
 "quoteText": "I never failed in mathematics. Before I was fifteen I had mastered differential and integral calculus.",
 "quoteAuthor": "Albert Einstein"
 }, {
-"quoteText": “Calculus is one course you can come with to your parents and say, I am dropping it. And they'll understand.”,
-"quoteAuthor": "Bill Cosby"
-}, {
 "quoteText": "The analytical geometry of Descartes and the calculus of Newton and Leibniz have expanded into the marvelous mathematical method.",
 "quoteAuthor": "Nicolas Butler"
-}, {
-"quoteText": “The world is continuous, but the mind is discrete.”,
-"quoteAuthor": "David Mumford"
 }, {
 "quoteText": "Computer science is to biology what calculus is to physics. It's the natural mathematical technique that best maps the character of the subject.",
 "quoteAuthor": "Harold Morowitz"
@@ -95,4 +83,5 @@
 "quoteText": "I was more interested in skating and the girls and traveling than I was in calculus.",
 "quoteAuthor": "Scott Hamilton"
 }
-]
+];
+
