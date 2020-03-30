@@ -1,0 +1,55 @@
+<%sideContents=['Term Simulation','Polynomial Simulation','Under development','Under development','Under development','Under development','Under development','Under development','Under development','Under development']%>
+
+<%dict={"Term Simulation":"sample","Polynomial Simulation":"poly"}%>
+
+<div class="container center-align" id="menu" style="overflow-x:hidden;overflow-y:scroll;height:400px; " >
+    <div class="card">
+                <div class="collection" >
+                    <% sideContents.forEach(element => { %>
+                        <a onclick=" disableAll('<%=dict[element]%>');" style="cursor: pointer;"  class="collection-item hide-on-med-and-large-only activator">   <%=element%> </a>
+                    <% }) %>
+        </div>
+
+        <div class="card-reveal">
+
+            
+            <%-include('./termSimulate.ejs')%>
+            <%-include('./polySimulate.ejs')%>
+            
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    console.log(screen.width)
+    if(screen.width<=500){
+        document.getElementById('menu').style.width="95%";
+        document.getElementById('menu').style.marginTop="10%";
+        
+    }
+    else{
+        document.getElementById('menu').style.width="50%";
+        document.getElementById('menu').style.marginTop="6%";
+    
+    }
+</script>
+
+<script>
+    function disableAll(elementVisible){
+        
+        var allDict= JSON.parse('<%-JSON.stringify(dict)%>')
+        Object.keys(allDict).forEach((element)=>{
+            if(element!=elementVisible)
+            document.getElementById( allDict[element]).style.display="none";
+
+            console.log(allDict[element])
+            
+        })
+
+        document.getElementById(elementVisible).style.display='block';
+
+    }
+
+    
+</script>

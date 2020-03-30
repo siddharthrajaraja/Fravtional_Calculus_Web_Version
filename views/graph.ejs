@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Graph Plotted</title>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 
 </head>
 <body>
+
+    <a href="/homepage"> <strong> <i class="material-icons">arrow_back</i> Click to go back </strong> </a>
+
     <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
     
     <%var arrx=obj.tfx%>
@@ -79,4 +82,5 @@
     </script>
 
 </body>
+<%-include('./partials/materialize.ejs')%>
 </html>
