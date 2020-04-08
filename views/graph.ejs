@@ -17,11 +17,14 @@
     <%var arry =obj.tfy%>
     <%var arrdioy =obj.tdioy%>
     <%var arrdfoy =obj.tdfoy%>
+    <%var ans=obj.ans%>
     
     
    
     <%console.log(typeof(x_axis))%>
     <script>
+        var solution=JSON.parse('<%-JSON.stringify(ans)%>')
+
         var trace1 = {
             x: JSON.parse('<%-JSON.stringify(arrx)%>') ,
             y: JSON.parse('<%-JSON.stringify(arry)%>'),
@@ -31,6 +34,7 @@
             name:"t vs f"
         };
         
+        console.log(trace1)
         
         var trace2 = {
             x: JSON.parse('<%-JSON.stringify(arrx)%>') ,

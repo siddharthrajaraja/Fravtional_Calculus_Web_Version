@@ -5,10 +5,17 @@
     <small> <strong> Note: </strong> This section is to calculate the fractional derivative of <strong> a polynomial equation over alpha order derivative </strong>. </small>
     
 
-    <form action="/term_simulation" method="POST">
+    <form action="/poly_simulation" method="POST">
         
+        <div class="input-field">
+            <input type="text" name="mu" id="mu">
+            <label for="mu">Enter value of mu</label>
+            
+        </div>
+
         <div class="input-field" style="margin-top: 10%;">
-            <input type="text" name="equation" id="equation">
+            <input type="text" name="equation" id="equation" placeholder="a1*x^b1+a2*x^b2+...+an"   pattern="(?:^(([0-9]*(?:(\.)[0-9]+|)[*]{1}x\^[0-9]*(?:((\.))[0-9]+|))([+|-]([0-9]*(?:(\.)[0-9]+|)[*]{1}x\^[0-9]*(?:((\.))[0-9]+|)))*([+|-]([0-9]+))*)|)[0-9]*(?:(\.)[0-9]+|)" >
+            
             <label for="equation">Enter the Equation</label>
         </div>
 

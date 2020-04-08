@@ -5,6 +5,7 @@ module.exports.successive_differentiation=async(mu,alpha)=>{
     var i=0;
     var f=[],t=[],dio=[],dfo=[];
     var k=0;
+    var ans=[[gamma((mu+1)/gamma(mu-alpha+1)),mu-alpha]];
     while (i<10) {
         t.push(i);
         f.push(Math.pow(t[k],mu))
@@ -18,7 +19,8 @@ module.exports.successive_differentiation=async(mu,alpha)=>{
         "tfx":t,
         "tfy":f,
         "tdioy":dio,
-        "tdfoy":dfo
+        "tdfoy":dfo,
+        "ans":ans
 
     }
     

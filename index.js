@@ -11,7 +11,7 @@ app.set('view engine','ejs');
 app.use('/assets',express.static('assets'));
 
 // Get Routes ------------------------------------->>>>  
-var  {dashboard,homepage}=require('./server/getRoutes.js')
+var  {dashboard,homepage,pFD}=require('./server/getRoutes.js')
 
 app.get('/dashboard', dashboard);
 
@@ -30,12 +30,13 @@ app.get('/graph1',(req,res)=>{
 
 // Post Routes ------------------------------>>>>>>>>>>>>
 
-var {term_simulation}=require('./server/postRoutes.js')
+var {term_simulation,poly_simulation}=require('./server/postRoutes.js')
 
 app.post('/term_simulation',term_simulation)
-
+app.post('/poly_simulation',poly_simulation)
 
 // App Listen --------------------------------->>>>>>>>>>>>
 app.listen(process.env.PORT  || 3000, function() { 
     console.log('server running on port 3000'); 
 } ) 
+
